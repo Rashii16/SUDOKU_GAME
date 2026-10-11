@@ -1,0 +1,1177 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#ECECEC;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+.container{
+
+    width:95%;
+    max-width:1500px;
+
+    background:white;
+
+    margin:30px auto;
+
+    border-radius:20px;
+
+    padding:30px 45px 40px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+   TOP NAVBAR
+=========================== */
+nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 28px;
+
+    background:#FFFBEA;
+
+    border:2px solid #B5B8FF;
+
+    border-radius:12px;
+
+    margin-bottom:40px;
+
+}
+
+.difficulty{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+}
+
+.difficulty span{
+
+    font-size:1.2rem;
+    font-weight:600;
+
+}
+
+.level{
+
+    border:none;
+
+    background:transparent;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+.level:hover{
+
+    background:#d7d2ff;
+
+}
+
+.level.active{
+
+    background:#8e84ea;
+
+    color:white;
+
+}
+
+.dashboard{
+
+    border:none;
+
+    background:#d9d9d9;
+
+    padding:12px 28px;
+
+    border-radius:6px;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.dashboard:hover{
+
+    background:#bdbdbd;
+
+}
+
+/* ==========================
+   NAVIGATION BUTTONS
+========================== */
+
+.nav-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px 0;
+}
+
+/* Dashboard Button */
+
+#dashboardBtn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:12px 24px;
+    min-width:180px;
+    height:50px;
+
+    background:linear-gradient(135deg,#6C63FF,#8B80F9);
+    color:#fff;
+
+    border:none;
+    border-radius:12px;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:all .3s ease;
+
+    box-shadow:0 6px 15px rgba(108,99,255,.30);
+}
+
+#dashboardBtn i{
+    font-size:18px;
+}
+
+#dashboardBtn:hover{
+    background:linear-gradient(135deg,#5a4de0,#7467ea);
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(108,99,255,.40);
+}
+
+#dashboardBtn:active{
+    transform:scale(.96);
+}
+
+#dashboardBtn:focus{
+    outline:none;
+    box-shadow:0 0 0 4px rgba(108,99,255,.25);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    #dashboardBtn{
+        width:100%;
+        max-width:250px;
+        font-size:15px;
+        height:48px;
+    }
+
+}
+
+/* ===========================
+   MAIN GAME
+=========================== */
+
+
+.game{
+
+    display:grid;
+
+    grid-template-columns:620px 350px;
+
+    justify-content:center;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+/* ===========================
+   BOARD
+=========================== */
+.board{
+    width:540px;
+    height:540px;
+
+    display:grid;
+    grid-template-columns:repeat(9,1fr);
+    grid-template-rows:repeat(9,1fr);
+
+    border:3px solid #1976d2;
+    background:#faf9e7;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+/* ===========================
+   CELLS
+=========================== */
+.cell{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:60px;
+    height:60px;
+
+    font-size:26px;
+    font-weight:600;
+
+    background:#faf9e7;
+
+    border:1px solid #999;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-sizing:border-box;
+}
+
+.fixed{
+    color:#111;
+    font-weight:bold;
+}
+
+.selected{
+    background:#b8f4b5;
+}
+
+.error{
+    background:#ff4d4d;
+    color:white;
+}
+
+.cell.selected{
+    background:#baf5b3;
+}
+
+.cell.fixed{
+    font-weight:bold;
+    color:black;
+}
+
+.cell.error{
+    background:#ff5b5b;
+    color:white;
+}
+
+.cell:hover{
+    background:#eeeeee;
+}
+
+.cell:hover{
+
+    background:#ece7ff;
+
+}
+
+.cell.selected{
+
+    background:#c7c1ff;
+
+}
+
+.cell.fixed{
+
+    font-weight:700;
+
+    color:#111;
+
+}
+
+.cell.correct{
+
+    background:#b9f6b5;
+
+}
+
+.cell.wrong{
+
+    background:#ff5252;
+
+    color:white;
+
+}
+
+/* ===========================
+   THICK 3x3 BORDERS
+=========================== */
+
+.right-border{
+
+    border-right:3px solid black !important;
+
+}
+
+.bottom-border{
+
+    border-bottom:3px solid black !important;
+
+}
+
+/* ===========================
+   RIGHT PANEL
+=========================== */
+
+.right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+/* ===========================
+   INFO BOXES
+=========================== */
+
+.top-info{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.card{
+
+    background:#DDD8FF;
+
+    padding:28px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 8px 18px rgba(0,0,0,.08);
+
+}
+.card h2{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#333;
+
+    margin-bottom:6px;
+
+}
+
+.card p{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:#111;
+
+    margin:0;
+
+}
+
+/* ===========================
+   NUMBER PANEL
+=========================== */
+
+.numbers{
+
+    background:#FFFBEA;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+/* ===========================
+   NUMBER BUTTONS
+=========================== */
+
+.number{
+
+    height:78px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#F2F2F2;
+
+    font-size:2rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.number:hover{
+
+    background:#8e84ea;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+.number:active{
+
+    transform:scale(.95);
+
+}
+
+/* ===========================
+   HINT BUTTON
+=========================== */
+
+/* ==========================
+   HINT BUTTON
+========================== */
+
+.hint {
+    grid-column: 1 / 4;
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background: linear-gradient(135deg, #8B80F9, #6C63FF);
+    color: #fff;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(108, 99, 255, 0.3);
+}
+
+.hint:hover {
+    background: linear-gradient(135deg, #7467ea, #5a4de0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(108, 99, 255, 0.45);
+}
+
+.hint:active {
+    transform: scale(0.96);
+}
+
+.hint:focus {
+    outline: none;
+}
+
+.hint:disabled {
+    background: #bdbdbd;
+    color: #fff;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+/* ==========================
+   HINT CELL
+========================== */
+
+.cell.hint-cell {
+    background: #fff3cd !important;
+    color: #d97706 !important;
+    font-weight: bold;
+    border: 2px solid #f59e0b;
+    animation: hintFlash 0.6s ease;
+}
+
+@keyframes hintFlash {
+    0% {
+        transform: scale(1.15);
+        background: #facc15;
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+        background: #fff3cd;
+    }
+}
+/* ===========================
+   CELL ANIMATIONS
+=========================== */
+
+.cell{
+
+    transition:
+        background .25s,
+        transform .15s,
+        color .25s;
+
+}
+
+.cell:active{
+
+    transform:scale(.95);
+
+}
+
+/* Correct cell */
+.cell.correct{
+    background:#22c55e !important;
+    color:white;
+    border-color:#16a34a;
+    transition:0.25s;
+}
+
+/* Wrong cell */
+.cell.wrong{
+    background:#ef4444 !important;
+    color:white;
+    border-color:#dc2626;
+    transition:0.25s;
+}
+
+/* ===========================
+   ROW/COLUMN HIGHLIGHT
+=========================== */
+
+.cell.highlight{
+
+    background:#ece7ff;
+
+}
+
+.cell.same-number{
+    border:3px solid #22c55e !important;
+    background:#ffffff !important;
+    color:#111;
+}
+
+/* ===========================
+   POP ANIMATION
+=========================== */
+
+@keyframes pop{
+
+    0%{
+
+        transform:scale(.5);
+
+    }
+
+    60%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.cell.filled{
+
+    animation:pop .2s ease;
+
+}
+
+/* ===========================
+   WRONG SHAKE
+=========================== */
+
+@keyframes shake{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    25%{
+
+        transform:translateX(-4px);
+
+    }
+
+    50%{
+
+        transform:translateX(4px);
+
+    }
+
+    75%{
+
+        transform:translateX(-4px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+.cell.wrong{
+
+    animation:shake .3s;
+
+}
+
+/* ===========================
+   BUTTON SHADOWS
+=========================== */
+
+.number,
+.hint,
+.dashboard,
+.level{
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.08);
+
+}
+
+.number:hover,
+.hint:hover,
+.dashboard:hover{
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.15);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+    .game{
+
+        grid-template-columns:1fr;
+
+        justify-items:center;
+
+        gap:40px;
+
+    }
+
+    .right{
+
+        width:540px;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .container{
+
+        padding: 20px;
+
+    }
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        align-items:flex-start;
+
+    }
+
+    .difficulty{
+
+        flex-wrap:wrap;
+
+    }
+
+    .board{
+
+        width:95vw;
+        height:95vw;
+
+    }
+
+    .right{
+
+        width:95vw;
+
+    }
+
+    .numbers{
+
+        gap:12px;
+
+    }
+
+    .number{
+
+        height:60px;
+
+        font-size:1.6rem;
+
+    }
+
+    .hint{
+
+        height:55px;
+
+        font-size:1.2rem;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+  .top-info{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+}
+
+
+    .card h2{
+
+        font-size:1.4rem;
+
+    }
+
+    .card p{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+/* ===========================
+   PAGE ANIMATION
+=========================== */
+
+.container{
+
+    animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===========================
+   BOARD SHADOW
+=========================== */
+
+.board{
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.12);
+}
+
+/* ===========================
+   BOARD HOVER
+=========================== */
+
+.board:hover{
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.18);
+}
+
+/* ===========================
+   SELECTED CELL GLOW
+=========================== */
+
+.cell.selected{
+    background:#d8d3ff;
+    box-shadow:
+        inset 0 0 0 2px #7467ea;
+}
+
+/* ===========================
+   RELATED ROW/COLUMN
+=========================== */
+
+.cell.highlight{
+    background:#f3f1ff;
+}
+
+/* ===========================
+   SAME NUMBER
+=========================== */
+
+.cell.same-number{
+    background:#dff8d9;
+    font-weight:700;
+}
+
+/* ===========================
+   FIXED CELL
+=========================== */
+
+.cell.fixed{
+    background:#fffdf3;
+    color:#111;
+}
+
+/* ===========================
+   EMPTY CELL
+=========================== */
+
+.cell:empty{
+    background:#fffef7;
+}
+
+/* ===========================
+   INFO CARD EFFECT
+=========================== */
+
+.card{
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 10px 18px rgba(0,0,0,.12);
+}
+.card{
+    background:#DDD8FF;
+    border-radius:12px;
+    padding:14px 18px;
+    height:90px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.3s;
+
+}
+
+.card:hover{
+    transform:translateY(-2px);
+}
+/* ===========================
+   NAVIGATION EFFECT
+=========================== */
+
+.level{
+    position:relative;
+}
+
+.level::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:0;
+    height:3px;
+    background:#7467ea;
+    transition:.3s;
+    transform:translateX(-50%);
+}
+
+.level:hover::after{
+    width:80%;
+}
+
+.level.active::after{
+    width:80%;
+}
+
+/* ===========================
+   BUTTON RIPPLE
+=========================== */
+
+.number,
+.hint,
+.dashboard{
+    position:relative;
+    overflow:hidden;
+}
+
+.number::before,
+.hint::before,
+.dashboard::before{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:rgba(255,255,255,.4);
+    border-radius:50%;
+    transition:.45s;
+}
+
+.number:active::before,
+.hint:active::before,
+.dashboard:active::before{
+    width:220px;
+    height:220px;
+    opacity:0;
+}
+
+/* ===========================
+   TIMER
+=========================== */
+
+#timer{
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+/* ===========================
+   MISTAKES
+=========================== */
+
+#mistakes{
+    color:#222;
+    font-weight:700;
+}
+
+/* ===========================
+   DASHBOARD BUTTON
+=========================== */
+
+.dashboard{
+    font-weight:600;
+}
+
+/* ===========================
+   HINT BUTTON
+=========================== */
+
+.hint{
+    margin-top:5px;
+}
+
+/* ===========================
+   REMOVE BLUE TAP
+=========================== */
+
+button{
+    -webkit-tap-highlight-color:transparent;
+}
+
+/* ===========================
+   SMOOTH SCROLL
+=========================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f5f5f5;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#8e84ea;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#7467ea;
+}
+
+/* ===========================
+   POPUP (Future Use)
+=========================== */
+
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+
+}
+
+.popup.active{
+    display:flex;
+}
+
+.popup-content{
+    background:white;
+    width:420px;
+    padding:35px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.popup-content h2{
+    margin-bottom:15px;
+    font-size:2rem;
+}
+
+.popup-content p{
+    margin-bottom:25px;
+    font-size:1.1rem;
+}
+
+.popup-content button{
+    padding:12px 28px;
+    border:none;
+    background:#8e84ea;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+
+}
+
+
+/* Premium Sudoku Master refresh */
+:root{--ink:#17233d;--muted:#71809b;--accent:#635bdf;--accent2:#8d84ff;--surface:#fff;--line:#e2e7f1;--soft:#f4f6fc}
+body{background:radial-gradient(circle at 12% 8%,#e8eaff 0,transparent 32%),linear-gradient(135deg,#f5f7fc,#edf1f8);color:var(--ink);padding:24px}
+.container{width:min(1200px,100%);margin:16px auto;padding:28px;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.85);border-radius:26px;box-shadow:0 24px 70px rgba(31,42,89,.12)}
+.navbar{background:linear-gradient(120deg,#fbfbff,#f3f2ff);border:1px solid #e1e0ff;border-radius:18px;padding:18px 22px;margin-bottom:26px;gap:18px}
+.difficulty span{font-size:.9rem;color:var(--muted);font-weight:600;letter-spacing:.03em}
+.level{font-size:.9rem;font-weight:600;color:#59647d;padding:10px 14px;border:1px solid transparent}
+.level:hover{background:#e9e8ff}.level.active{background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 6px 16px #635bdf38;color:#fff}
+.game{gap:34px;align-items:start}.board{background:#fff;border:2px solid #9ca7ca;border-radius:12px;overflow:hidden;box-shadow:0 12px 28px #25345a12}
+.cell{appearance:none;border:1px solid #e0e5f0;background:#fff;color:#34415f;font-size:clamp(16px,2vw,25px);font-weight:500;cursor:pointer;transition:background .15s,color .15s;min-width:0;min-height:0;padding:0}
+.cell.fixed{background:#f2f4fb;color:#182342;font-weight:750}.cell.highlight{background:#f0f0ff}.cell.same-number{background:#dfdefe;color:#4f46c9;font-weight:750}.cell.selected{background:#625be0!important;color:#fff!important;box-shadow:inset 0 0 0 2px #4941c2}.cell.wrong{background:#fff0f1;color:#d33951}.cell.correct{color:#19876c}.cell.hint-cell{background:#e0fbf1!important;color:#087f65!important;animation:hintFlash .55s ease}
+.cell.box-right{border-right:3px solid #9ca7ca}.cell.box-bottom{border-bottom:3px solid #9ca7ca}
+.right{gap:20px}.card{border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#fff,#f8f9ff);padding:18px;box-shadow:0 8px 24px #25345a08}.card h3{font-size:.82rem;color:var(--muted);font-weight:600}.card p,.timer-box span{font-size:1.55rem;font-weight:750;color:var(--ink)}
+.numbers{gap:10px}.number{border:1px solid #e0e4f0;background:#f8f9ff;color:#4642b8;border-radius:12px;font-weight:700;box-shadow:0 3px 8px #26345a0a;transition:.18s}.number:hover{background:#e9e8ff;transform:translateY(-2px);border-color:#c9c6ff}
+.hint{width:100%;border:0;border-radius:13px;padding:14px 18px;background:linear-gradient(135deg,#625be0,#8a80ff);color:#fff;font-weight:700;font-size:1rem;box-shadow:0 9px 20px #635bdf38;cursor:pointer}.hint:hover{filter:brightness(1.05);transform:translateY(-1px)}
+#pauseBtn{border:1px solid var(--line);background:#f5f6ff;color:var(--accent);border-radius:10px;padding:8px 11px;cursor:pointer}
+@media(max-width:768px){body{padding:10px}.container{padding:14px;border-radius:18px;margin:4px auto}.navbar{padding:14px;align-items:flex-start}.game{gap:20px}.cell{font-size:clamp(13px,4vw,22px)}.difficulty{gap:5px}}
+
+/* Victory celebration and completed number pad states */
+.number { position: relative; transition: transform .2s ease, background .2s ease, color .2s ease; }
+.number.completed-number { background: linear-gradient(135deg,#16a879,#0f8f68) !important; color: #fff !important; border-color: #0f8f68 !important; cursor: default; }
+.number.completed-number::after { content: '✓'; position: absolute; top: 2px; right: 5px; font-size: 12px; font-weight: 800; color: #fff; }
+.number.completed-number { opacity: .88; }
+.victory-overlay { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 20px; background: rgba(17, 20, 44, .62); backdrop-filter: blur(9px); animation: overlayIn .3s ease both; }
+.victory-modal { position: relative; overflow: hidden; width: min(470px, 100%); padding: 38px 30px 30px; border: 1px solid rgba(255,255,255,.7); border-radius: 28px; text-align: center; color: #25234a; background: linear-gradient(145deg,#fff 0%,#f4f1ff 100%); box-shadow: 0 28px 90px rgba(12,8,50,.35); animation: victoryPop .55s cubic-bezier(.2,1.5,.4,1) both; }
+.victory-icon { display: grid; place-items: center; width: 88px; height: 88px; margin: 0 auto 18px; border-radius: 28px; color: white; font-size: 42px; background: linear-gradient(135deg,#7568f5,#b46cf5); box-shadow: 0 12px 28px #8d75ee55; animation: trophyFloat 2s ease-in-out infinite; }
+.victory-modal h2 { font-size: clamp(27px,5vw,36px); margin-bottom: 8px; }
+.victory-modal p { color: #74718c; }
+.victory-stats { display: flex; gap: 12px; margin: 24px 0; }
+.victory-stat { flex: 1; padding: 13px 8px; border-radius: 15px; background: #eeebff; }
+.victory-stat strong { display: block; font-size: 21px; color: #5e50d8; }
+.victory-stat span { font-size: 11px; color: #77718f; text-transform: uppercase; letter-spacing: .08em; }
+.victory-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.victory-actions button { border: 0; border-radius: 12px; padding: 12px 18px; font: inherit; font-weight: 600; cursor: pointer; }
+.victory-primary { color: white; background: linear-gradient(135deg,#6c63ff,#9b6df4); box-shadow: 0 7px 18px #7869ee44; }
+.victory-secondary { color: #5e50d8; background: #e9e5ff; }
+.confetti-piece { position: fixed; top: -18px; z-index: 10000; width: 9px; height: 14px; border-radius: 2px; pointer-events: none; animation: confettiFall var(--fall-time,3s) linear forwards; }
+@keyframes overlayIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes victoryPop { from { opacity: 0; transform: translateY(25px) scale(.82) } to { opacity: 1; transform: translateY(0) scale(1) } }
+@keyframes trophyFloat { 0%,100% { transform: translateY(0) rotate(-3deg) } 50% { transform: translateY(-7px) rotate(3deg) } }
+@keyframes confettiFall { to { transform: translate3d(var(--drift,40px),110vh,0) rotate(800deg); opacity: .15 } }
+@media (prefers-reduced-motion: reduce) { .victory-overlay,.victory-modal,.victory-icon,.confetti-piece { animation-duration: .01ms !important; } }

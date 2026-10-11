@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Master · Dashboard</title><link rel="stylesheet" href="dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6d2ea823d0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="dashboard-container">
+  <header class="top-bar">
+    <div class="profile"><div class="profile-img"><img src="Myimg.jpeg" alt="Profile"></div><div><h2 id="userName">Sudoku Master</h2><p class="dashboard-subtitle">Your personal puzzle performance</p></div></div>
+    <button id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back to game</button>
+  </header>
+  <main class="dashboard-content">
+    <section class="left-section" aria-label="Game statistics">
+      <div class="dashboard-mini-stats">
+        <article class="mini-stat"><span><i class="fa-solid fa-gamepad"></i> Games played</span><strong id="gamesPlayed">0</strong></article>
+        <article class="mini-stat"><span><i class="fa-solid fa-trophy"></i> Games won</span><strong id="gamesWon">0</strong></article>
+        <article class="mini-stat"><span><i class="fa-solid fa-bullseye"></i> Win rate</span><strong id="winRate">0%</strong></article>
+        <article class="mini-stat"><span><i class="fa-solid fa-stopwatch"></i> Best time</span><strong id="bestTime">—</strong></article>
+      </div>
+      <div class="card">
+        <h2><i class="fa-solid fa-chart-simple"></i> Difficulty breakdown</h2>
+        <p class="dashboard-subtitle">Games started at each level</p>
+        <div class="level"><span>Simple</span><div class="progress"><div class="fill easy" id="easyFill"></div></div><b class="level-count" id="easyCount">0</b></div>
+        <div class="level"><span>Medium</span><div class="progress"><div class="fill medium" id="mediumFill"></div></div><b class="level-count" id="mediumCount">0</b></div>
+        <div class="level"><span>Hard</span><div class="progress"><div class="fill hard" id="hardFill"></div></div><b class="level-count" id="hardCount">0</b></div>
+        <div class="level"><span>Expert</span><div class="progress"><div class="fill expert" id="expertFill"></div></div><b class="level-count" id="expertCount">0</b></div>
+      </div>
+      <div class="card">
+        <h2><i class="fa-solid fa-bolt"></i> Quick start</h2><p class="dashboard-subtitle">Choose a challenge and jump back in.</p>
+        <div class="quick-start"><button id="easyBtn">Simple</button><button id="mediumBtn">Medium</button><button id="hardBtn">Hard</button><button id="expertBtn">Expert</button></div>
+      </div>
+    </section>
+    <section class="tips">
+      <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Sudoku strategy guide</h2>
+      <p class="dashboard-subtitle">A few smart habits make every puzzle easier.</p>
+      <ol>
+        <li><strong>Scan rows, columns and boxes</strong><ul><li>Start where the most numbers are already filled.</li><li>Identify which digits are missing from each row, column and 3×3 box.</li></ul></li>
+        <li><strong>Use elimination</strong><ul><li>Rule out digits already present in the same row, column or box.</li><li>Only place a digit when it fits without breaking Sudoku rules.</li></ul></li>
+        <li><strong>Look for a naked single</strong><ul><li>If a cell has only one possible digit, that is its answer.</li></ul></li>
+        <li><strong>Spot hidden singles</strong><ul><li>If a digit can fit in only one cell in a row, column or box, place it there.</li></ul></li>
+        <li><strong>Use hints thoughtfully</strong><ul><li>When stuck, use a hint to reveal one correct cell, then continue solving from there.</li></ul></li>
+      </ol>
+    </section>
+  </main>
+  <footer class="dashboard-subtitle" style="text-align:center;margin-top:24px">Keep practicing — consistency beats speed.</footer>
+</div>
+<script src="dashboard.js"></script>
+</body>
+</html>

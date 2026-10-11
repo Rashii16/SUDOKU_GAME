@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sudoku Master</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6d2ea823d0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= TOP BAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="difficulty">
+
+            <span>Difficulty :</span>
+
+            <button class="level active" data-level="easy">Simple</button>
+
+            <button class="level" data-level="medium">Medium</button>
+
+            <button class="level" data-level="hard">Hard</button>
+
+            <button class="level" data-level="expert">Expert</button>
+
+        </div>
+
+        <div class="nav-buttons">
+
+
+            <button class="btn" id="dashboardBtn">
+                <i class="fa-solid fa-table-columns"></i>
+                Dashboard
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= GAME AREA ================= -->
+
+    <div class="game">
+
+        <!-- Sudoku Board -->
+
+        <div id="board" class="board"></div>
+
+        <!-- Right Panel -->
+
+        <div class="right">
+
+            <div class="top-info">
+
+                <div class="card">
+
+                    <h3>Mistakes</h3>
+
+                    <p id="mistakes">0 / 3</p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Timer</h3>
+
+                    <div class="timer-box">
+
+                        <span id="timer">00:00</span>
+
+                        <button id="pauseBtn">
+
+                            <i class="fa-solid fa-pause"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Number Pad -->
+
+            <div class="numbers">
+
+                <button class="number" data-value="1">1</button>
+                <button class="number" data-value="2">2</button>
+                <button class="number" data-value="3">3</button>
+
+                <button class="number" data-value="4">4</button>
+                <button class="number" data-value="5">5</button>
+                <button class="number" data-value="6">6</button>
+
+                <button class="number" data-value="7">7</button>
+                <button class="number" data-value="8">8</button>
+                <button class="number" data-value="9">9</button>
+
+            </div>
+
+            <!-- Bottom Buttons -->
+
+           
+
+                <button id="hintBtn" class="hint">
+                    
+                    <i class="fa-solid fa-lightbulb"></i>
+                    💡 Hint
+                </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+<script src="generator.js"></script>
+<script src="sudoku.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
